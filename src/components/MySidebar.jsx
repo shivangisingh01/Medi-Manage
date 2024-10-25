@@ -1,4 +1,9 @@
 import React from "react";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faHeart } from '@fortawesome/free-solid-svg-icons'
+import { faBrain } from '@fortawesome/free-solid-svg-icons'
+import { faXRay } from '@fortawesome/free-solid-svg-icons'
+import { faDisease } from '@fortawesome/free-solid-svg-icons'
 
 const MySidebar = ({ setDepartment }) => {
   return (
@@ -17,17 +22,17 @@ const MySidebar = ({ setDepartment }) => {
           <li className="p-2 m-1">
             {" "}
             <button onClick={() => setDepartment("Oncologist")}>
-              {" "}
+            <FontAwesomeIcon icon={faDisease} />
               Oncologist{" "}
             </button>
           </li>
           <li className="p-2 m-1" onClick={() => setDepartment("Cardiologist")}>
             {" "}
-            <button>Cardiologist</button>{" "}
+            <button> <FontAwesomeIcon icon={faHeart} />Cardiologist</button>{" "}
           </li>
           <li className="p-2 m-1" onClick={() => setDepartment(" Radiologist")}>
             {" "}
-            <button> Radiologist</button>{" "}
+            <button><FontAwesomeIcon icon={faXRay} /> Radiologist</button>{" "}
           </li>
           <li className="p-2 m-1" onClick={() => setDepartment("Pediatrician")}>
             {" "}
@@ -35,7 +40,8 @@ const MySidebar = ({ setDepartment }) => {
           </li>
           <li className="p-2 m-1" onClick={() => setDepartment("Neurologist")}>
             {" "}
-            <button>Neurologist</button>{" "}
+            <button> <FontAwesomeIcon icon={faBrain} />
+            Neurologist</button>{" "}
           </li>
         </ul>
       </div>

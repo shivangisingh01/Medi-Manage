@@ -37,7 +37,7 @@ const Feedback = () => {
   return (
     <>
       <div className="container form-component message-form">
-        <h2>Send Us your valuable Feedback</h2>
+        <h2 className="text-3xl pb-3">Send Us your valuable Feedback</h2>
         <form onSubmit={handleMessage}>
           <div>
             <input

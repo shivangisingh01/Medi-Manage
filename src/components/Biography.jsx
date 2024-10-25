@@ -8,29 +8,16 @@ const Biography = ({imageUrl}) => {
           <img src={imageUrl} alt="whoweare" />
         </div>
         <div className="banner">
-          <p>Biography</p>
+          <h2 className="text-center font-bold text-4xl p-2">Biography</h2>
           <h3>Who We Are</h3>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus
-            blanditiis sequi aperiam. Debitis fugiat harum ex maxime illo
-            consequatur mollitia voluptatem omnis nihil nesciunt beatae esse
-            ipsam, sapiente totam aspernatur porro ducimus aperiam nisi. Ex
-            magnam voluptatum consectetur reprehenderit fugiat recusandae aut
-            similique illum natus velit, praesentium nostrum nesciunt. Deleniti,
-            nesciunt laboriosam totam iusto!
+          Our Hospital is a leading healthcare institution committed to delivering world-class medical services and compassionate care. Established in 1965, the hospital has grown to become a cornerstone of healthcare in the region, offering a wide range of medical specialties and advanced treatment options.
           </p>
-          <p>We are all in 2024!</p>
-          <p>We are working on a MERN STACK PROJECT.</p>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores
-            assumenda exercitationem accusamus sit repellendus quo optio dolorum
-            corporis corrupti. Quas similique vel minima veniam tenetur
-            obcaecati atque magni suscipit laboriosam! Veniam vitae minus nihil
-            cupiditate natus provident. Ex illum quasi pariatur odit nisi
-            voluptas illo qui ipsum mollitia. Libero, assumenda?
+          The hospital is renowned for its focus on patient-centered care, offering personalized treatment plans and a seamless experience for both inpatients and outpatients. From routine check-ups to complex surgeries,provides medical services that meet international standards.
           </p>
-          <p>Lorem ipsum dolor sit amet!</p>
-          <p>Coding is fun!</p>
+          <p>Equipped with advanced diagnostic labs, a modern intensive care unit ICU, and a fully functional emergency department that operates 24/7, ensuring prompt care for critical cases.</p>
+          <p>Committed to healthcare excellence,  also emphasizes preventive care and patient education, organizing regular health camps and wellness programs for the community. Its mission is not only to treat illness but to promote long-term health and well-being.</p>
         </div>
       </section>
     </>

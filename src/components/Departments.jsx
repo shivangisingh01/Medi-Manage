@@ -68,8 +68,8 @@ const Departments = () => {
   return (
     <>
       <div className="container departments">
-        <h2>Departments</h2>
-        <Carousel
+        <h2 className="text-3xl">Departments</h2>
+        <Carousel className="scroll-smooth"
           responsive={responsive}
           removeArrowOnDeviceType={[
             // "superLargeDesktop",
@@ -82,7 +82,7 @@ const Departments = () => {
             return (
               <div key={index} className="card">
                 <div className="depart-name">{depart.name}</div>
-                <img src={depart.imageUrl} alt="Department" />
+                <img src={depart.imageUrl} alt="Department" className="object-cover h-48 w-96"/>
               </div>
             );
           })}

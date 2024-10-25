@@ -1,53 +1,42 @@
 import axios from "axios";
 import React, { useContext, useState } from "react";
-import { toast } from "react-toastify";
+
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import { Context } from "../main";
-import { Link, useNavigate, Navigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Login = () => {
-  const { isAuthenticated, setIsAuthenticated } = useContext(Context);
+  const { setIsAuthenticated, setUser } = useContext(Context);
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  // const [confirmPassword, setConfirmPassword] = useState("");
-
-  const navigateTo = useNavigate();
 
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios
-        .post(
-          "http://localhost:6005/api/login",
-          { email, password ,role: "Patient" },
-          {
-            withCredentials: true,
-            headers: { "Content-Type": "application/json" },
-          }
-        )
-        .then((res) => {
-          // Extract message and token from the response
-          const token = response.data.token;  // Get the token from the backend response
-          localStorage.setItem('jwtToken', response.data.token);
-          // Store token in a cookie
-          // document.cookie = `token=${token}; path=/`;
+      const response = await axios.post("http://localhost:6005/api/auth/login", { 
+        email, 
+        password 
+      });
+    
+          // Get the token from the backend response
+          localStorage.setItem("jwtToken", response.data.token);
 
-    // Show success message
-    // toast.success(message);
-          toast.success(res.data.message);
           setIsAuthenticated(true);
-          navigateTo("/");
-          setEmail("");
-          setPassword("");
-        });
+          setUser(response.data.user);
+
+          toast.success("Login successful!");
+          setTimeout(() => {
+            window.location.href = "/"; // Redirect after login
+          }, 1000);
+    
     } catch (error) {
-      toast.error(error.response.data.message);
+      const errorMessage =
+        error.response?.data?.message || "Login failed. Please try again.";
+      toast.error(errorMessage); // Display error toast
     }
   };
-
-  if (isAuthenticated) {
-    return <Navigate to={"/"} />;
-  }
 
   return (
     <>
@@ -71,12 +60,7 @@ const Login = () => {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
-          {/* <input
-            type="password"
-            placeholder="Confirm Password"
-            value={confirmPassword}
-            onChange={(e) => setConfirmPassword(e.target.value)}
-          /> */}
+
           <div
             style={{
               gap: "10px",

@@ -4,6 +4,8 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import axios from "axios";
 import { toast } from "react-toastify";
 import { Context } from "../main";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faHandHoldingMedical} from '@fortawesome/free-solid-svg-icons'
 
 const Navbar = () => {
 
@@ -38,10 +40,10 @@ const Navbar = () => {
       <nav className={"container"}>
         <div className="logo">
           {/* <img src="/logo.png" alt="logo" className="logo-img" /> */}
-          <h1 className=""> <span className="text-purple font-bold  text-3xl">Medi</span>Manage</h1>
+          <h1 className="text-3xl"> <span className="text-purple font-bold"><FontAwesomeIcon icon={faHandHoldingMedical} />Medi</span>Manage</h1>
         </div>
         <div className={show ? "navLinks showmenu" : "navLinks"}>
-          <div className="links">
+          <div className="links text-2xl">
             <Link to={"/"} onClick={() => setShow(!show)}>
               Home
             </Link>

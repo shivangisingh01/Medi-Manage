@@ -1,11 +1,9 @@
 import axios from "axios";
 import React, { useContext, useState } from "react";
-// import { toast } from "react-toastify";
 import { Context } from "../main";
-import { Link, Navigate, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { ToastContainer, toast } from 'react-toastify';
-  import 'react-toastify/dist/ReactToastify.css';
-
+import 'react-toastify/dist/ReactToastify.css';
 
 
 const Register = () => {
@@ -30,14 +28,13 @@ const Register = () => {
     });
   };
 
-  const navigateTo = useNavigate();
 
   const handleRegistration = async (e) => {
     e.preventDefault();
   
     try {
       const res = await axios.post(
-        "http://localhost:6005/api/register",
+        "http://localhost:6005/api/auth/register",
         formData,
         {
           withCredentials: true,
@@ -48,7 +45,6 @@ const Register = () => {
       // Success case
       toast.success(res.data.message);
       setIsAuthenticated(true);
-      navigateTo("/");
   
       // Clear form fields
       setFormData({
@@ -61,17 +57,17 @@ const Register = () => {
         gender: "",
         password: "",
       });
+
+      setTimeout(() => {
+        window.location.href = "/";
+      }, 1000);
   
     } catch (error) {
       // Error case
       toast.error(error.response.data.message);
     }
   };
-  
 
-  if (isAuthenticated) {
-    return <Navigate to={"/"} />;
-  }
 
   return (
     <>

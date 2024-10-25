@@ -77,9 +77,6 @@ body {
   .hero .banner span {
     right: -400px;
   }
-  .hero .banner h1 {
-    font-size: 32px;
-  }
 }
 @media (max-width: 1085px) {
   .hero .banner span {
@@ -102,14 +99,12 @@ body {
   padding-bottom: 60px;
 }
 .form-component h1 {
-  font-size: 40px;
   font-weight: 700;
   color: rgb(255, 255, 255);
   letter-spacing: 4px;
   margin-bottom: 10px;
 }
 .form-component h4 {
-  font-size: 20px;
   margin-bottom: 5px;
   max-width: 750px;
   color: gray;
@@ -132,7 +127,6 @@ body {
 .form-component form select,
 .form-component form textarea {
   flex: 1;
-  font-size: 20px;
   padding: 10px 10px 10px 40px;
   border-radius: 7px;
   border: 1px solid gray;
@@ -144,7 +138,6 @@ body {
   width: fit-content;
   border: none;
   border-radius: 8px;
-  font-size: 24px;
   margin-bottom: 30px;
   background: linear-gradient(140deg, #9083d5, #271776ca);
 }
@@ -193,7 +186,6 @@ body {
   .form-component form input,
   .form-component form select,
   .form-component form textarea {
-    font-size: 20px;
     padding: 10px;
   }
 }
@@ -220,7 +212,6 @@ body {
   letter-spacing: 3px;
 }
 .biography .banner p:first-child {
-  font-size: 24px;
   letter-spacing: 2px;
 }
 @media (max-width: 925px) {
@@ -250,80 +241,6 @@ body {
     top: 10%;
   }
 }
-footer {
-  padding-bottom: 30px !important;
-}
-footer hr {
-  margin-bottom: 30px;
-}
-footer .content {
-  display: flex;
-  gap: 20px;
-}
-footer .content div {
-  flex: 1;
-}
-footer .content div:nth-child(3) {
-  flex: 2;
-}
-footer .content div h4 {
-  font-weight: 700;
-  margin-bottom: 20px;
-}
-footer .content div ul {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-footer .content div ul a {
-  color: gray;
-  text-decoration: none;
-}
-footer .content div ul a:hover {
-  /* color: #8570ed; */
-  transition: 0.3s;
-}
-footer .content div ul li span:first-child {
-  width: 150px;
-  display: inline-block;
-}
-
-footer .content div:last-child div {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  margin-bottom: 10px;
-}
-footer .content div:last-child div svg {
-  font-size: 24px;
-}
-@media (max-width: 1135px) {
-  footer .content {
-    flex-wrap: wrap;
-    justify-content: space-between;
-  }
-  footer .content div,
-  footer .content div:nth-child(3) {
-    flex: none;
-    width: 340px;
-    margin-bottom: 30px;
-  }
-}
-@media (max-width: 900px) {
-  footer {
-    padding-bottom: 0 !important;
-  }
-  footer .content div,
-  footer .content div:nth-child(3) {
-    width: 100%;
-  }
-}
-@media (max-width: 390px) {
-  footer .content div:nth-child(3) ul li {
-    display: flex;
-    flex-direction: column;
-  }
-}
 
 .departments {
   padding-top: 30px;
@@ -347,19 +264,18 @@ footer .content div:last-child div svg {
   margin: 0 10px;
   text-decoration: none;
 }
-.card img {
+/* .card img {
   position: absolute;
   width: 100%;
   height: 100%;
   z-index: -1;
   top: 0;
   left: 0;
-}
+} */
 .card .depart-name {
   margin-bottom: 30px;
   background: #e5e5e5;
   width: 320px;
-  font-size: 24px;
   text-transform: uppercase;
   display: flex;
   justify-content: center;
@@ -388,7 +304,6 @@ nav .logo {
   flex: 1;
   display: flex;
   align-items: center;
-  font-size: 2rem;
 }
 nav .navLinks {
   flex: 2;
@@ -404,8 +319,6 @@ nav .navLinks .links {
 }
 nav .navLinks .links a {
   text-decoration: none;
-  /* color: #222; */
-  font-size: 20px;
   font-weight: 600;
   letter-spacing: 1.4px;
 }
@@ -420,7 +333,6 @@ nav .btn {
   /* background: transparent; */
   border: none;
   border-radius: 20px;
-  font-size: 20px;
   font-weight: 600;
   z-index: 2;
 }
