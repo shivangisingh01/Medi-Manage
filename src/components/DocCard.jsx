@@ -4,12 +4,76 @@ import Modal from "react-bootstrap/Modal";
 import { useState } from "react";
 import Form from "react-bootstrap/Form";
 import TimeSlotPicker from "../components/TimeSlotPicker";
+import { jwtDecode } from "jwt-decode";
 
-const DocCard = ({ docName,docImage,dept, yrsOfExp , address}) => {
+
+const DocCard = ({docId, docName,docImage,dept, yrsOfExp , address}) => {
+  const token = localStorage.getItem("jwtToken");
+  const decodedToken = jwtDecode(token);// Decodes the token
+  const userId = decodedToken.userId; // Extract the userId from the decoded token
+  
+
+  const [selectedDoc, setSelectedDoc] = useState(null);
+  const [appointmentDate, setAppointmentDate] = useState("");
+  const [timeSlot, setTimeSlot] = useState("");
   const [show, setShow] = useState(false);
 
+  const handleDateChange = (e) => {
+    setAppointmentDate(e.target.value);
+    console.log(token)
+    console.log(decodedToken)
+    console.log(userId)
+  };
+  const onSelectSlot = (e) => {
+    setTimeSlot(e.target.value);
+  };
   const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
+
+  const handleAppointmentClick = (id )=> {
+    // const doctor = doctorsList.find((doc) => doc.id === id);
+    setShow(true)
+    setSelectedDoc(id);
+  };
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+      
+    
+    if (!selectedDoc || !appointmentDate || !timeSlot) {
+      alert("Please select a doctor, date, and time slot.");
+      return;
+    }
+  
+  const appointmentData = {
+    userId: userId,
+    doctorId: selectedDoc,
+    date: appointmentDate,
+    timeSlot: timeSlot,
+  };
+
+  try {
+    // Send POST request to your backend
+    const response = await fetch("http://localhost:6005/api/appointments/book", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(appointmentData),
+    });
+
+    if (response.ok) {
+      alert("Appointment booked successfully!");
+      // Clear the form after submission
+      setSelectedDoc(null);
+      setAppointmentDate("");
+      setTimeSlot("");
+    } else {
+      alert("Failed to book appointment.");
+    }
+  } catch (error) {
+    console.error("Error:", error);
+    alert("An error occurred while booking the appointment.");
+  }
+};
   return (
     <div className="flex flex-1 flex-col w-full max-sm:w-full boxShadow">
       <img src={docImage} alt="" className="w-[280px] h-[280px]" />
@@ -18,19 +82,17 @@ const DocCard = ({ docName,docImage,dept, yrsOfExp , address}) => {
          <p className="font-montserrat leading-normal text-xl text-slate-gray ">{dept}</p>
       </div>
       <h3 className="text-slate-gray text-xl mt-2 leading-normal font-semibold">{docName}</h3>
-      <p className="font-semibold text-2xl text-coral-red">{dept}</p>
       <p className=" text-2xl text-coral-red">{yrsOfExp}</p>
-      <p className=" text-2xl text-coral-red">{address}</p>
+      <p className=" text-lg text-coral-red">{address}</p>
 
       {/* Your appointment-related content goes here */}
-          <Button variant="primary" onClick={handleShow}>
+          <Button variant="primary" onClick={() => handleAppointmentClick(docId)}>
             Book Appointment
           </Button>
-           
           <Modal
             show={show}
             onHide={handleClose}
-            backdrop="static"
+            backdrop = "static"
             keyboard={false}
           >
             <Modal.Header closeButton>
@@ -40,11 +102,11 @@ const DocCard = ({ docName,docImage,dept, yrsOfExp , address}) => {
               <Form>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                   <Form.Label>Select Date</Form.Label>
-                  <Form.Control type="date" placeholder="Enter Date" />
+                  <Form.Control type="date" placeholder="Enter Date" onChange={handleDateChange}/>
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                   <Form.Label>Select a time slot</Form.Label>
-                  <TimeSlotPicker />
+                  <TimeSlotPicker onSelectSlot= {onSelectSlot}/>
                 </Form.Group>
                 <Form.Control size="sm" type="text" placeholder="Add a Note" />
 
@@ -57,7 +119,7 @@ const DocCard = ({ docName,docImage,dept, yrsOfExp , address}) => {
               <Button variant="secondary" onClick={handleClose}>
                 Close
               </Button>
-              <Button variant="primary" onClick={SubmitEvent}>Submit</Button>
+              <Button variant="primary" onClick={handleSubmit}>Submit</Button>
             </Modal.Footer>
           </Modal>
       

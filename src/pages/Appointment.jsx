@@ -26,6 +26,7 @@ function Appointment() {
             {doctors.filter((doc) => {
              return doc.dept === department;
             }).map((doc) => {
+              
              return <DocCard key={doc.name} {...doc}  />;
             })}
           </div>

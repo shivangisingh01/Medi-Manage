@@ -40,9 +40,9 @@ const Login = () => {
 
   return (
     <>
-      <div className="container form-component login-form">
-        <h2>Sign In</h2>
-        <p>Please Login To Continue</p>
+      <div className="container form-component login-form w-2/4">
+        <h1 className="text-5xl">Sign In</h1>
+        <p className="text-xl">Please Login To Continue</p>
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat culpa
           voluptas expedita itaque ex, totam ad quod error?
@@ -68,16 +68,17 @@ const Login = () => {
               flexDirection: "row",
             }}
           >
-            <p style={{ marginBottom: 0 }}>Not Registered?</p>
+            <p className="mb-0">Not Registered?</p>
             <Link
               to={"/register"}
               style={{ textDecoration: "none", color: "#271776ca" }}
+              className=""
             >
               Register Now
             </Link>
           </div>
           <div style={{ justifyContent: "center", alignItems: "center" }}>
-            <button type="submit">Login</button>
+            <button type="submit" className="text-3xl">Login</button>
           </div>
         </form>
       </div>

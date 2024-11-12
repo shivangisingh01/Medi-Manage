@@ -59,11 +59,11 @@ const Navbar = () => {
               Logout
             </button>
           ) : (
-            <button className="bg-violet btn" onClick={goToLogin}>
+            <button className="bg-white btn text-2xl" onClick={goToLogin}>
               Login
             </button>
           )}
-          <button className="bg-violet btn" onClick={goToRegister}>
+          <button className="bg-violet btn text-2xl" onClick={goToRegister}>
               Register
             </button>
         </div>

@@ -339,9 +339,6 @@ nav .btn {
 nav .hamburger {
   display: none;
 }
-nav svg {
-  font-size: 1.75rem;
-}
 @media (max-width: 1520px) {
   nav {
     min-width: 100%;

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import Form from 'react-bootstrap/Form';
+import FormSelect from 'react-bootstrap/esm/FormSelect';
 
-const TimeSlotPicker = () => {
+const TimeSlotPicker = ({onSelectSlot}) => {
   const startTime = 10; // 10 AM
   const endTime = 18; // 6 PM
   const interval = 30; // 30 minutes
@@ -9,7 +9,7 @@ const TimeSlotPicker = () => {
   const generateTimeSlots = () => {
     const slots = [];
     let currentTime = new Date();
-    currentTime.setHours(startTime, 0, 0); // Start time
+    currentTime.setHours(startTime, 0, 0); 
     const endTimeDate = new Date();
     endTimeDate.setHours(endTime, 30, 0); // End time with 30 minutes slot
 
@@ -28,20 +28,11 @@ const TimeSlotPicker = () => {
 
   return (
     <div>
-      
-      {/* <select>
-        {timeSlots.map((slot, index) => (
-          <option key={index} value={slot}>{slot}</option>
-        ))}
-      </select> */}
-      <Form.Select aria-label="Default select example">
-      <h3>Select a Time Slot</h3>
+      <FormSelect aria-label="Default select example" onChange={onSelectSlot}>
       {timeSlots.map((slot, index) => (
           <option key={index} value={slot}>{slot}</option>
         ))}
-      {/* <option value="2">Two</option>
-      <option value="3">Three</option> */}
-    </Form.Select>
+    </FormSelect>
     </div>
   );
 };

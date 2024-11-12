@@ -71,10 +71,10 @@ const Register = () => {
 
   return (
     <>
-      <div className="container form-component register-form">
-        <h1>Welcome</h1> 
-        <p>Let us know more about yourself</p>
-        <h4>
+      <div className="container form-component register-form w-3/4">
+        <h1 className="text-5xl">Welcome</h1> 
+        <p className="text-xl">Let us know more about yourself</p>
+        <h4 className="text-lg">
           Personal Information
         </h4>
         <form onSubmit={handleRegistration}>
@@ -157,7 +157,7 @@ const Register = () => {
             </Link>
           </div>
           <div style={{ justifyContent: "center", alignItems: "center" }}>
-            <button type="submit">Register</button>
+            <button type="submit" className="text-2xl">Register</button>
             <ToastContainer position="top-center"/>
           </div>
         </form>

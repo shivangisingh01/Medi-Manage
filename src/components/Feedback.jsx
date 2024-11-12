@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useState } from "react";
-import { toast } from "react-toastify";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Feedback = () => {
   const [firstName, setFirstName] = useState("");
@@ -14,7 +15,7 @@ const Feedback = () => {
     try {
       await axios
         .post(
-          "http://localhost:6005/api/feedback",
+          "http://localhost:6005/api/f/eedback",
           { firstName, lastName, email, phone, message },
           {
             withCredentials: true,
@@ -36,7 +37,7 @@ const Feedback = () => {
 
   return (
     <>
-      <div className="container form-component message-form">
+      <div className="container form-component message-form w-3/4">
         <h2 className="text-3xl pb-3">Send Us your valuable Feedback</h2>
         <form onSubmit={handleMessage}>
           <div>
@@ -69,11 +70,11 @@ const Feedback = () => {
           </div>
           <textarea
             rows={7}
-            placeholder="Message"
+            placeholder="Write your message here"
             value={message}
             onChange={(e) => setMessage(e.target.value)}
           />
-          <div style={{ justifyContent: "center", alignItems: "center" }}>
+          <div className="text-xl justify-center">
             <button type="submit">Send</button>
           </div>
         </form>
