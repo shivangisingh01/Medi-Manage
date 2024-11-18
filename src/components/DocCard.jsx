@@ -1,13 +1,17 @@
-import React from "react";
+import React,{ useContext } from "react";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import { useState } from "react";
 import Form from "react-bootstrap/Form";
+import { toast, ToastContainer } from "react-toastify";
+import { AuthContext } from "../AuthContext";
+import "react-toastify/dist/ReactToastify.css";
 import TimeSlotPicker from "../components/TimeSlotPicker";
 import { jwtDecode } from "jwt-decode";
 
 
 const DocCard = ({docId, docName,docImage,dept, yrsOfExp , address}) => {
+  const { isAuthenticated } = useContext(AuthContext);
   const token = localStorage.getItem("jwtToken");
   const decodedToken = jwtDecode(token);// Decodes the token
   const userId = decodedToken.userId; // Extract the userId from the decoded token
@@ -30,15 +34,18 @@ const DocCard = ({docId, docName,docImage,dept, yrsOfExp , address}) => {
   const handleClose = () => setShow(false);
 
   const handleAppointmentClick = (id )=> {
-    // const doctor = doctorsList.find((doc) => doc.id === id);
+    console.log("isAuthenticated:", isAuthenticated);
+    if (!isAuthenticated) {
+      toast.error("Please log in to book an appointment.");
+      return; // Stop here if the user is not authenticated
+    }
     setShow(true)
     setSelectedDoc(id);
   };
   const handleSubmit = async (event) => {
     event.preventDefault();
       
-    
-    if (!selectedDoc || !appointmentDate || !timeSlot) {
+    if ( !selectedDoc || !appointmentDate || !timeSlot) {
       alert("Please select a doctor, date, and time slot.");
       return;
     }
@@ -61,7 +68,7 @@ const DocCard = ({docId, docName,docImage,dept, yrsOfExp , address}) => {
     });
 
     if (response.ok) {
-      alert("Appointment booked successfully!");
+      toast.success("Appointment booked successfully!");
       // Clear the form after submission
       setSelectedDoc(null);
       setAppointmentDate("");
@@ -79,14 +86,14 @@ const DocCard = ({docId, docName,docImage,dept, yrsOfExp , address}) => {
       <img src={docImage} alt="" className="w-[280px] h-[280px]" />
 
       <div className="mt-8 flex justify-start gap-2.5">
-         <p className="font-montserrat leading-normal text-xl text-slate-gray ">{dept}</p>
+         <p className="font-montserrat leading-normal text-xl text-rose font-medium">{dept}</p>
       </div>
-      <h3 className="text-slate-gray text-xl mt-2 leading-normal font-semibold">{docName}</h3>
-      <p className=" text-2xl text-coral-red">{yrsOfExp}</p>
+      <h3 className="text-limegreen text-xl mt-2 leading-normal font-semibold">{docName}</h3>
+      <p className=" text-2xl text-coral-red">{yrsOfExp}+ yrs</p>
       <p className=" text-lg text-coral-red">{address}</p>
-
+ 
       {/* Your appointment-related content goes here */}
-          <Button variant="primary" onClick={() => handleAppointmentClick(docId)}>
+          <Button className="bg-green text-lg" onClick={() => handleAppointmentClick(docId)}>
             Book Appointment
           </Button>
           <Modal

@@ -12,6 +12,12 @@ const Feedback = () => {
 
   const handleMessage = async (e) => {
     e.preventDefault();
+    toast.success("Feedback sent!");
+    setFirstName("");
+    setLastName("");
+    setEmail("");
+    setPhone("");
+    setMessage("");
     try {
       await axios
         .post(
@@ -37,7 +43,7 @@ const Feedback = () => {
 
   return (
     <>
-      <div className="container form-component message-form w-3/4">
+      <div className="container form-component message-form max-w-screen-xl">
         <h2 className="text-3xl pb-3">Send Us your valuable Feedback</h2>
         <form onSubmit={handleMessage}>
           <div>
@@ -75,7 +81,7 @@ const Feedback = () => {
             onChange={(e) => setMessage(e.target.value)}
           />
           <div className="text-xl justify-center">
-            <button type="submit">Send</button>
+            <button type="submit" onClick={handleMessage}>Send</button>
           </div>
         </form>
         <img src="/Vector.png" alt="vector" />

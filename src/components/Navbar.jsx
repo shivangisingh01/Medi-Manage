@@ -3,14 +3,15 @@ import { Link, useNavigate } from "react-router-dom";
 import { GiHamburgerMenu } from "react-icons/gi";
 import axios from "axios";
 import { toast } from "react-toastify";
-import { Context } from "../main";
+// import { Context } from "../main";
+import { AuthContext } from "../AuthContext";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHandHoldingMedical} from '@fortawesome/free-solid-svg-icons'
 
 const Navbar = () => {
 
   const [show, setShow] = useState(false);
-  const { isAuthenticated, setIsAuthenticated } = useContext(Context);
+  const { isAuthenticated, setIsAuthenticated } = useContext(AuthContext);
 
   const handleLogout = async () => {
     await axios
@@ -37,40 +38,42 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className={"container"}>
-        <div className="logo">
-          {/* <img src="/logo.png" alt="logo" className="logo-img" /> */}
-          <h1 className="text-3xl"> <span className="text-purple font-bold"><FontAwesomeIcon icon={faHandHoldingMedical} />Medi</span>Manage</h1>
+
+    <nav className="bg-[#F9F2E4] text-black px-4 py-3 shadow-lg">
+      <div className="container mx-auto flex items-center justify-between">
+        
+        {/* Logo */}
+        <div className="text-2xl font-bold">
+        <FontAwesomeIcon icon={faHandHoldingMedical} />
+          MediManage
         </div>
-        <div className={show ? "navLinks showmenu" : "navLinks"}>
-          <div className="links text-2xl">
-            <Link to={"/"} onClick={() => setShow(!show)}>
-              Home
-            </Link>
-            <Link to={"/appointment"} onClick={() => setShow(!show)}>
-              Appointment
-            </Link>
-            <Link to={"/about"} onClick={() => setShow(!show)}>
-              About Us
-            </Link>
-          </div>
-          {isAuthenticated ? (
-            <button className=" btn" onClick={handleLogout}>
+        
+        {/* Links */}
+        <div className="hidden md:flex space-x-6 text-lg">
+          <Link to={"/"} onClick={() => setShow(!show)} className="hover:text-blue-200 text-lg">Home</Link>
+          <Link to={"/appointment"} onClick={() => setShow(!show)} className="hover:text-blue-200">Appointment</Link>
+          <Link to={"/about"} onClick={() => setShow(!show)} className="hover:text-blue-200">About Us</Link>
+        </div>
+
+        {/* Buttons */}
+        <div className="hidden md:flex space-x-4">
+        {isAuthenticated ? (
+            <button className="bg-white text-blue-600 px-4 py-2 rounded hover:bg-blue-100" onClick={handleLogout}>
               Logout
             </button>
           ) : (
-            <button className="bg-white btn text-2xl" onClick={goToLogin}>
-              Login
-            </button>
+          <button className="bg-white text-blue-600 px-4 py-2 rounded hover:bg-blue-100" onClick={goToLogin}>Login</button>
           )}
-          <button className="bg-violet btn text-2xl" onClick={goToRegister}>
-              Register
-            </button>
+          <button className="bg-green-500 px-4 py-2 rounded hover:bg-green-400" onClick={goToRegister}>Register</button>
         </div>
-        <div className="hamburger" onClick={() => setShow(!show)}>
-          <GiHamburgerMenu />
+
+        {/* Mobile Menu Toggle */}
+        <div className="md:hidden">
+          <button className="text-white focus:outline-none" onClick={() => setShow(!show)}>☰</button>
         </div>
-      </nav>
+      </div>
+    </nav>
+
     </>
   );
 };

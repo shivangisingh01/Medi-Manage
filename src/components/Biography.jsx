@@ -3,9 +3,9 @@ import React from "react";
 const Biography = ({imageUrl}) => {
   return (
     <>
-      <section className="container biography">
+      <section className="container biography text-[#4E4F50]  max-w-screen-xl">
         <div className="banner">
-          <img src={imageUrl} alt="whoweare" />
+          <img src={imageUrl} className="pt-6" alt="whoweare" />
         </div>
         <div className="banner">
           <h2 className="text-center font-bold text-4xl p-2">Biography</h2>
@@ -17,7 +17,7 @@ const Biography = ({imageUrl}) => {
           The hospital is renowned for its focus on patient-centered care, offering personalized treatment plans and a seamless experience for both inpatients and outpatients. From routine check-ups to complex surgeries,provides medical services that meet international standards.
           </p>
           <p>Equipped with advanced diagnostic labs, a modern intensive care unit ICU, and a fully functional emergency department that operates 24/7, ensuring prompt care for critical cases.</p>
-          <p>Committed to healthcare excellence,  also emphasizes preventive care and patient education, organizing regular health camps and wellness programs for the community. Its mission is not only to treat illness but to promote long-term health and well-being.</p>
+          <p>Committed to healthcare excellence,  also emphasizes preventive care and patient education, organizing regular health camps and wellness programs for the community.</p>
         </div>
       </section>
     </>

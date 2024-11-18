@@ -67,7 +67,7 @@ const Departments = () => {
 
   return (
     <>
-      <div className="container departments " >
+      <div className="container departments  max-w-screen-xl" >
         <h2 className="text-3xl">Departments</h2>
         <Carousel className="scroll-smooth"
           responsive={responsive}

@@ -6,12 +6,12 @@ import Appointment from "./pages/Appointment";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Register from "./pages/Register";
-import Navbar from "./components/NavBar";
+import Navbar from "./components/Navbar";
 import Login from "./pages/Login";
 import axios from "axios";
 // import 'bootstrap/dist/css/bootstrap.min.css';
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Context } from "./main";
+// import { Context } from "./main";
 import "./App.css";
 
 const router = createBrowserRouter([
@@ -49,31 +49,9 @@ const router = createBrowserRouter([
   },
 ]);
 function App() {
-  const { isAuthenticated, setIsAuthenticated, setUser } = useContext(Context);
 
-  useEffect(() => {
-    const fetchUser = async () => {
-      try {
-        const token = localStorage.getItem("jwtToken");
-        const response = await axios.get(
-          "http://localhost:6005/api/fetch-login-data",
-          {
-            headers: {
-              Authorization: `Bearer ${token}`,
-              "Content-Type": "application/json",
-            },
-            withCredentials: true,
-          }
-        );
-        setIsAuthenticated(true);
-        setUser(response.data.user);
-      } catch (error) {
-        setIsAuthenticated(false);
-        setUser({});
-      }
-    };
-    fetchUser();
-  }, [isAuthenticated]);
+//  http://localhost:6005/api/auth/fetch", {
+     
   return (
     <>
       <RouterProvider router={router} />

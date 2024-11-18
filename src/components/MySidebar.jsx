@@ -7,7 +7,7 @@ import { faDisease } from '@fortawesome/free-solid-svg-icons'
 
 const MySidebar = ({ setDepartment }) => {
   return (
-    <section className="flex flex-col h-screen bg-violet  text-white flex-2 p-2 m-1 ">
+    <section className="flex flex-col h-screen bg-limegreen mt-24  text-white flex-2 p-2 ">
       <p className="text-center text-white font-semibold text-2xl mt-20 px-4 leading-normal">
         Suggestions
       </p>
@@ -22,17 +22,16 @@ const MySidebar = ({ setDepartment }) => {
           <li className="p-2 m-1">
             {" "}
             <button onClick={() => setDepartment("Oncologist")}>
-            <FontAwesomeIcon icon={faDisease} />
               Oncologist{" "}
             </button>
           </li>
           <li className="p-2 m-1" onClick={() => setDepartment("Cardiologist")}>
             {" "}
-            <button> <FontAwesomeIcon icon={faHeart} />Cardiologist</button>{" "}
+            <button> Cardiologist</button>{" "}
           </li>
-          <li className="p-2 m-1" onClick={() => setDepartment(" Radiologist")}>
+          <li className="p-2 m-1" onClick={() => setDepartment("Radiologist")}>
             {" "}
-            <button><FontAwesomeIcon icon={faXRay} /> Radiologist</button>{" "}
+            <button> Radiologist</button>{" "}
           </li>
           <li className="p-2 m-1" onClick={() => setDepartment("Pediatrician")}>
             {" "}
@@ -40,7 +39,7 @@ const MySidebar = ({ setDepartment }) => {
           </li>
           <li className="p-2 m-1" onClick={() => setDepartment("Neurologist")}>
             {" "}
-            <button> <FontAwesomeIcon icon={faBrain} />
+            <button> 
             Neurologist</button>{" "}
           </li>
         </ul>

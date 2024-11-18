@@ -1,33 +1,31 @@
-import dermaDoc from "./derma.jpg";
-import entDoc from "./ent.jpg";
-import heartDoc1 from "./heartdoc.jpg";
-import neuroDoc1 from "./neuro.jpg";
-import oncoDoc from "./onco.jpg";
-import pediaDoc from "./onco.jpg";
-import orthoDoc from "./pedia.jpg";
-import radioDoc from "./ortho.jpg";
-
-import heartDoc2 from "./a.jpg";
-import radioDoc1 from "./b.jpg";
-import cardioDoc from "./c.jpg";
-import heartDoc3 from "./d.jpg";
-import radioDoc2 from "./e.jpg";
-import neuroDoc2 from "./f.jpg";
-
-export {
-  dermaDoc,
-  entDoc,
-  heartDoc1,
-  neuroDoc1,
-  oncoDoc,
-  pediaDoc,
-  orthoDoc,
-  radioDoc,
-
-  heartDoc2 ,
- radioDoc1 ,
- cardioDoc ,
- heartDoc3 ,
-radioDoc2 ,
-neuroDoc2 ,
-};
+import  dermaDoc from './derma.jpg'
+import  dermaDoc2 from './a.jpg'
+import  heartDoc1 from './b.jpg'
+import  neuroDoc1 from "./c.jpg"
+import  oncoDoc from './d.jpg'
+import  pediaDoc from "./f.jpg"
+import  orthoDoc from "./g.jpg"
+import  radioDoc from "./ent.jpg"
+import  heartDoc2 from './heartDoc.jpg'
+import  radioDoc1 from './heartDoc2.jpg'
+import  cardioDoc from './neuro.jpg'
+import  oncoDoc2 from './neuro2.jpg'
+import  radioDoc2 from './onco.jpg'
+import  neuroDoc2 from './e.jpg'
+// import  neuroDoc2 from "dermaDoc.jpg"
+export{
+    dermaDoc,
+    dermaDoc2,
+    heartDoc1,
+    neuroDoc1,
+    oncoDoc,
+    pediaDoc,
+    orthoDoc,
+    radioDoc,
+    heartDoc2 ,
+    radioDoc1 ,
+    cardioDoc ,
+    oncoDoc2 ,
+   radioDoc2 ,
+   neuroDoc2 ,
+}

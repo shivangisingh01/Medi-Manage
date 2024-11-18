@@ -1,14 +1,15 @@
 import axios from "axios";
 import React, { useContext, useState } from "react";
-
+import { useNavigate } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { Context } from "../main";
+// import { Context } from "../main";
+import { AuthContext } from "../AuthContext";
 import { Link } from "react-router-dom";
 
 const Login = () => {
-  const { setIsAuthenticated, setUser } = useContext(Context);
-
+  const {isAuthenticated, setIsAuthenticated, setUser } = useContext(AuthContext);
+  const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -28,7 +29,7 @@ const Login = () => {
 
           toast.success("Login successful!");
           setTimeout(() => {
-            window.location.href = "/"; // Redirect after login
+            navigate("/"); // Redirect after login
           }, 1000);
     
     } catch (error) {
@@ -43,10 +44,6 @@ const Login = () => {
       <div className="container form-component login-form w-2/4">
         <h1 className="text-5xl">Sign In</h1>
         <p className="text-xl">Please Login To Continue</p>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat culpa
-          voluptas expedita itaque ex, totam ad quod error?
-        </p>
         <form onSubmit={handleLogin}>
           <input
             type="text"

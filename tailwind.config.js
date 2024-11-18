@@ -10,11 +10,15 @@ export default {
         transparent: 'transparent',
         current: '#ca8a04',
         'white': '#ffffff',
-        'purple': '#a78bfa',
-        'slate-gray' : '#1e293b',
-        'amber' : '#f59e0b',
+         'green': '#A58CB3',
+        'limegreen':'#838BC2'  ,
+        'rose' : '#D9A1A0',
+        'rose2' : '#FADCDC',
+        'neongreen' : '#EAE7FA',
         'violet' : '#c4b5fd',
-        'white' : '#eef2ff'
+        'white' : '#eef2ff',
+        'pink': '#F79489',
+        'lightPink': '#FADCD9'
       },
       boxShadow: {
         '3xl': '0 10px 40px rgba(0, 0, 0, 0.1)'

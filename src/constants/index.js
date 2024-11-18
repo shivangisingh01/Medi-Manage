@@ -1,20 +1,19 @@
 // import 
 import {
-    dermaDoc,
-    entDoc,
-    heartDoc1,
-    neuroDoc1,
-    oncoDoc,
-    pediaDoc,
-    orthoDoc,
-    radioDoc,
-    
-    heartDoc2 ,
-    radioDoc1 ,
-    cardioDoc ,
-    heartDoc3 ,
-   radioDoc2 ,
-   neuroDoc2 ,
+  dermaDoc,
+  dermaDoc2,
+  heartDoc1,
+  neuroDoc1,
+  oncoDoc,
+  pediaDoc,
+  orthoDoc,
+  radioDoc,
+  heartDoc2 ,
+  radioDoc1 ,
+  cardioDoc ,
+  oncoDoc2 ,
+ radioDoc2 ,
+ neuroDoc2 ,
 } from "../assets/icons";
 
 
@@ -60,7 +59,7 @@ export const doctors = [
     {
       docId : 9501,
       docName: "Dr. Kavya Rao",
-      docImage: "https://example.com/images/shivani-verma.jpg",
+      docImage: dermaDoc2,
       dept: "Dermatologist",
       yrsOfExp: 10,
       address: "123 Skin Care Avenue, Sector 12, New Delhi, 110001, India",
@@ -92,7 +91,7 @@ export const doctors = [
   {
     docId : 8591,
     docName: "Anjali Sharma",
-    docImage: "https://example.com/images/anjali-sharma.jpg",
+    docImage: pediaDoc,
     dept: "Pediatrician",
     yrsOfExp: 8,
     address: "23 Whitefield Main Road, Whitefield, Bangalore, Karnataka",
@@ -100,7 +99,7 @@ export const doctors = [
   {
     docId : 5593,
     docName: "Vikram Singh",
-    docImage: "https://example.com/images/vikram-singh.jpg",
+    docImage: oncoDoc,
     dept: "Oncologist",
     yrsOfExp: 12,
     address: "14 JP Nagar 7th Phase, Bangalore, Karnataka",
@@ -111,7 +110,7 @@ export const doctors = [
     docImage: radioDoc2,
     dept: "Radiologist",
     yrsOfExp: 7,
-    address: "67 Electronic City Phase 1, Bangalore",
+    address: "67 Electronic City Phase 1, Bangalore,Karnataka 560011",
   },
   {
     docId : 1593,
@@ -132,7 +131,7 @@ export const doctors = [
   {
     docId : 9591,
     docName: "Rajesh Reddy",
-    docImage: "https://example.com/images/rajesh-reddy.jpg",
+    docImage: oncoDoc2,
     dept: "Oncologist",
     yrsOfExp: 11,
     address: "135 Hormone Road, Sector 4, Ahmedabad, 380001, India",

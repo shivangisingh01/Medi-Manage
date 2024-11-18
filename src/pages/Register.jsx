@@ -1,14 +1,15 @@
 import axios from "axios";
 import React, { useContext, useState } from "react";
-import { Context } from "../main";
+import { useNavigate } from "react-router-dom";
+import { AuthContext } from "../AuthContext";
 import { Link } from "react-router-dom";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 
 const Register = () => {
-  const { isAuthenticated, setIsAuthenticated } = useContext(Context);
-
+  const { isAuthenticated, setIsAuthenticated } = useContext(AuthContext);
+  const navigate = useNavigate(); 
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -59,7 +60,7 @@ const Register = () => {
       });
 
       setTimeout(() => {
-        window.location.href = "/";
+        navigate("/");
       }, 1000);
   
     } catch (error) {
