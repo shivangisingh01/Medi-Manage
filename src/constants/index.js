@@ -14,7 +14,8 @@ import {
   oncoDoc2 ,
  radioDoc2 ,
  neuroDoc2 ,
-} from "../assets/icons";
+} from "../assets/icons/index";
+
 
 
 export const doctors = [

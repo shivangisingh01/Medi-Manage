@@ -13,6 +13,9 @@ import { jwtDecode } from "jwt-decode";
 const DocCard = ({docId, docName,docImage,dept, yrsOfExp , address}) => {
   const { isAuthenticated } = useContext(AuthContext);
   const token = localStorage.getItem("jwtToken");
+  if (typeof token !== 'string') {
+    console.error('Invalid token retrieved');
+  }
   const decodedToken = jwtDecode(token);// Decodes the token
   const userId = decodedToken.userId; // Extract the userId from the decoded token
   
@@ -83,7 +86,7 @@ const DocCard = ({docId, docName,docImage,dept, yrsOfExp , address}) => {
 };
   return (
     <div className="flex flex-1 flex-col w-full max-sm:w-full boxShadow">
-      <img src={docImage} alt="" className="w-[280px] h-[280px]" />
+      <img src={docImage} alt="doctor" className="w-[280px] h-[280px]" />
 
       <div className="mt-8 flex justify-start gap-2.5">
          <p className="font-montserrat leading-normal text-xl text-rose font-medium">{dept}</p>

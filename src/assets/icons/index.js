@@ -14,18 +14,18 @@ import  radioDoc2 from './onco.jpg'
 import  neuroDoc2 from './e.jpg'
 // import  neuroDoc2 from "dermaDoc.jpg"
 export{
-    dermaDoc,
-    dermaDoc2,
-    heartDoc1,
-    neuroDoc1,
-    oncoDoc,
-    pediaDoc,
-    orthoDoc,
-    radioDoc,
-    heartDoc2 ,
-    radioDoc1 ,
-    cardioDoc ,
-    oncoDoc2 ,
-   radioDoc2 ,
-   neuroDoc2 ,
+    dermaDoc ,
+  dermaDoc2 ,
+ heartDoc1,
+  neuroDoc1, 
+  oncoDoc ,
+ pediaDoc ,
+ orthoDoc ,
+ radioDoc ,
+ heartDoc2 ,
+  radioDoc1 ,
+  cardioDoc ,
+  oncoDoc2 ,
+ radioDoc2 ,
+ neuroDoc2
 }
