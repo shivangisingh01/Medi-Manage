@@ -13,11 +13,11 @@ import { jwtDecode } from "jwt-decode";
 const DocCard = ({docId, docName,docImage,dept, yrsOfExp , address}) => {
   const { isAuthenticated } = useContext(AuthContext);
   const token = localStorage.getItem("jwtToken");
-  if (typeof token !== 'string') {
+  if (token) {
+    const decodedToken = jwtDecode(token);// Decodes the token
+    const userId = decodedToken.userId; // Extract the userId from the decoded token
     console.error('Invalid token retrieved');
   }
-  const decodedToken = jwtDecode(token);// Decodes the token
-  const userId = decodedToken.userId; // Extract the userId from the decoded token
   
 
   const [selectedDoc, setSelectedDoc] = useState(null);
@@ -27,9 +27,9 @@ const DocCard = ({docId, docName,docImage,dept, yrsOfExp , address}) => {
 
   const handleDateChange = (e) => {
     setAppointmentDate(e.target.value);
-    console.log(token)
-    console.log(decodedToken)
-    console.log(userId)
+    // console.log(token)
+    // console.log(decodedToken)
+    // console.log(userId)
   };
   const onSelectSlot = (e) => {
     setTimeSlot(e.target.value);
