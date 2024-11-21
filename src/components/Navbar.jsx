@@ -15,7 +15,7 @@ const Navbar = () => {
 
   const handleLogout = async () => {
     await axios
-      .get("http://localhost:6005/api/logout", {
+      .get(`${process.env.REACT_APP_API_URL}/api/logout`, {
         withCredentials: true,
       })
       .then((res) => {

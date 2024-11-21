@@ -59,7 +59,7 @@ const DocCard = ({docId, docName,docImage,dept, yrsOfExp , address}) => {
 
   try {
     // Send POST request to your backend
-    const response = await fetch("http://localhost:6005/api/appointments/book", {
+    const response = await fetch(`${process.env.REACT_APP_API_URL}/api/appointments/book`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

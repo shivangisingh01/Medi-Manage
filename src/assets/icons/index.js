@@ -6,8 +6,8 @@ import  oncoDoc from './d.jpg'
 import  pediaDoc from "./f.jpg"
 import  orthoDoc from "./g.jpg"
 import  radioDoc from "./ent.jpg"
-import  heartDoc2 from './heartDoc.jpg'
-import  radioDoc1 from './heartDoc2.jpg'
+import  heartDoc2 from './heartdoc.jpg'
+import  radioDoc1 from './heartdoc2.jpg'
 import  cardioDoc from './neuro.jpg'
 import  oncoDoc2 from './neuro2.jpg'
 import  radioDoc2 from './onco.jpg'

@@ -35,7 +35,7 @@ const Register = () => {
   
     try {
       const res = await axios.post(
-        "http://localhost:6005/api/auth/register",
+        `${process.env.REACT_APP_API_URL}/api/auth/register`,
         formData,
         {
           withCredentials: true,
@@ -44,6 +44,7 @@ const Register = () => {
       );
   
       // Success case
+      console.log(res)
       toast.success(res.data.message);
       setIsAuthenticated(true);
   

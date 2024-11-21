@@ -21,7 +21,7 @@ const Feedback = () => {
     try {
       await axios
         .post(
-          "http://localhost:6005/api/f/eedback",
+          `${process.env.REACT_APP_API_URL}/api/feed/back`,
           { firstName, lastName, email, phone, message },
           {
             withCredentials: true,

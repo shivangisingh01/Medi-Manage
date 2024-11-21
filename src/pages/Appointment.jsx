@@ -2,7 +2,7 @@ import { useState } from "react";
 import MySidebar from "../components/MySidebar";
 import NavBar from "../components/Navbar";
 import DocCard from "../components/DocCard";
-import {doctors} from "../constants";
+import {doctors} from "../constants/index";
 
 function Appointment() {
   const [department, setDepartment] = useState("Dermatologist");
