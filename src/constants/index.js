@@ -20,34 +20,13 @@ import {
 
 export const doctors = [
   {
-// Dr. Priya Reddy
-// Dr. Karan Singh
-// Dr. Neha Joshi
-// Dr. Siddharth Desai
-// Dr. Aditi Nair
-// Dr. Rajeev Patel
-
-// 1025
-// 2038
-// 3109
-// 4127
-// 5231
-// 6348
-// 7452
-// 8563
-// 9621
-// 1074
-// 2185
-// 3297
-// 4391
-// 5482
 
     docId : 6593,
     docName: "Dr. Rohan Sharma",
     docImage: dermaDoc,
     dept: "Dermatologist",
     yrsOfExp: 10,
-    address : "12 MG Road, Indiranagar, Bangalore, Karnataka 560038"
+    fees : 500
   },
   {
       docId : 9500,
@@ -55,15 +34,31 @@ export const doctors = [
       docImage: orthoDoc,
       dept: "Dermatologist",
       yrsOfExp: 11,
-      address : "45 Residency Road, Shanthala Nagar, Bangalore, Karnataka 560025",
+      fees : 500
     },
     {
       docId : 9501,
       docName: "Dr. Kavya Rao",
       docImage: dermaDoc2,
       dept: "Dermatologist",
-      yrsOfExp: 10,
-      address: "123 Skin Care Avenue, Sector 12, New Delhi, 110001, India",
+      yrsOfExp: 2,
+      fees : 500
+    },
+    {
+      docId : 9504,
+      docName: "Dr. Kavya Rao",
+      docImage: dermaDoc2,
+      dept: "Dermatologist",
+      yrsOfExp: 2,
+      fees : 500
+    },
+    {
+      docId : 9505,
+      docName: "Dr. Kavya Rao",
+      docImage: dermaDoc2,
+      dept: "Dermatologist",
+      yrsOfExp: 2,
+      fees : 500
     },
     {
     docId : 9555,
@@ -71,7 +66,7 @@ export const doctors = [
     docImage: heartDoc1,
     dept: "Cardiologist",
     yrsOfExp: 18,
-    address : "78 Koramangala 5th Block, Bangalore, Karnataka 560095",
+    fees : 500
   },
   {
     docId : 5533,
@@ -79,7 +74,7 @@ export const doctors = [
     docImage: heartDoc2,
     dept: "Cardiologist",
     yrsOfExp: 12,
-     address : "90 Brigade Road, Ashok Nagar, Bangalore, Karnataka"
+    fees : 500
   },
   {
     docId : 1293,
@@ -87,7 +82,7 @@ export const doctors = [
     docImage: cardioDoc,
     dept: "Cardiologist",
     yrsOfExp: 15,
-    address: "56 HSR Layout, Sector 4, Bangalore, Karnataka",
+    fees : 500
   },
   {
     docId : 8591,
@@ -95,7 +90,7 @@ export const doctors = [
     docImage: pediaDoc,
     dept: "Pediatrician",
     yrsOfExp: 8,
-    address: "23 Whitefield Main Road, Whitefield, Bangalore, Karnataka",
+    fees : 500
   },
   {
     docId : 5593,
@@ -103,7 +98,111 @@ export const doctors = [
     docImage: oncoDoc,
     dept: "Oncologist",
     yrsOfExp: 12,
-    address: "14 JP Nagar 7th Phase, Bangalore, Karnataka",
+    fees : 500
+  },
+  {
+    docId : 5594,
+    docName: "Vikram Singh",
+    docImage: oncoDoc,
+    dept: "Oncologist",
+    yrsOfExp: 12,
+    fees : 500
+  },
+  {
+    docId : 3593,
+    docName: "Vikram Singh",
+    docImage: oncoDoc,
+    dept: "Oncologist",
+    yrsOfExp: 12,
+    fees : 500
+  },
+  {
+    docId : 1593,
+    docName: "Vikram Singh",
+    docImage: oncoDoc,
+    dept: "Oncologist",
+    yrsOfExp: 12,
+    fees : 500
+  },
+  {
+    docId : 3593,
+    docName: "Vikram Singh",
+    docImage: oncoDoc,
+    dept: "Oncologist",
+    yrsOfExp: 12,
+    fees : 500
+  },
+  {
+    docId: 5583,
+    docName: "Vikram Singh",
+    docImage: oncoDoc,
+    dept: "Dermatologist",
+    yrsOfExp: 12,
+    fees : 500
+  },
+  {
+    docId: 6721,
+    docName: "Rhea Sharma",
+    docImage: "cardioDoc",
+    dept: "Cardiologist",
+    yrsOfExp: 8,
+    fees : 500
+  },
+  {
+    docId: 7834,
+    docName: "Ankur Malhotra",
+    docImage: "neuroDoc",
+    dept: "Neurologist",
+    yrsOfExp: 15,
+    fees : 500
+  },
+  {
+    docId: 8931,
+    docName: "Simran Kaur",
+    docImage: oncoDoc,
+    dept: "Dermatologist",
+    yrsOfExp: 6,
+    fees : 500
+  },
+  {
+    docId: 9217,
+    docName: "Arjun Mehta",
+    docImage: "orthoDoc",
+    dept: "Orthopedic",
+    yrsOfExp: 10,
+    fees : 500
+  },
+  {
+    docId: 1045,
+    docName: "Neha Verma",
+    docImage: "pedoDoc",
+    dept: "Pediatrician",
+    yrsOfExp: 9,
+    fees : 500
+  },
+  {
+    docId: 1193,
+    docName: "Rajesh Khanna",
+    docImage: "psychiatryDoc",
+    dept: "Psychiatrist",
+    yrsOfExp: 20,
+    fees : 500
+  },
+  {
+    docId: 2456,
+    docName: "Aditi Joshi",
+    docImage: "gynoDoc",
+    dept: "Gynecologist",
+    yrsOfExp: 7,
+    fees : 500
+  },
+  {
+    docId: 3309,
+    docName: "Kunal Desai",
+    docImage: "dentistDoc",
+    dept: "Dentist",
+    yrsOfExp: 5,
+    fees : 500
   },
   {
     docId : 3593,
@@ -111,7 +210,7 @@ export const doctors = [
     docImage: radioDoc2,
     dept: "Radiologist",
     yrsOfExp: 7,
-    address: "67 Electronic City Phase 1, Bangalore,Karnataka 560011",
+    fees : 500
   },
   {
     docId : 1593,
@@ -119,7 +218,7 @@ export const doctors = [
     docImage: radioDoc,
     dept: "Radiologist",
     yrsOfExp: 9,
-    address: "35 Rajajinagar, Bangalore, Karnataka 560010",
+    fees : 500
   },
   {
     docId : 9563,
@@ -127,7 +226,7 @@ export const doctors = [
     docImage: radioDoc1,
     dept: "Radiologist",
     yrsOfExp: 5,
-    address: "987 Mind Care Street, Sector 8, Pune, 411001, India",
+    fees : 500
   },
   {
     docId : 9591,
@@ -135,7 +234,7 @@ export const doctors = [
     docImage: oncoDoc2,
     dept: "Oncologist",
     yrsOfExp: 11,
-    address: "135 Hormone Road, Sector 4, Ahmedabad, 380001, India",
+    fees : 500
   },
   {
     docId : 7593,
@@ -143,7 +242,7 @@ export const doctors = [
     docImage: neuroDoc1,
     dept: "Neurologist",
     yrsOfExp: 6,
-    address: "246 Digestive Drive, Sector 7, Jaipur, 302001, India",
+    fees : 500
   },
   {
     docId : 9893,
@@ -151,6 +250,6 @@ export const doctors = [
     docImage: neuroDoc2,
     dept: "Neurologist",
     yrsOfExp: 14,
-    address: "29 Malleshwaram 8th Cross, Bangalore, Karnataka 560003",
+    fees : 500
   },
 ];

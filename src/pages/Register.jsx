@@ -34,8 +34,10 @@ const Register = () => {
     e.preventDefault();
   
     try {
+      // `${process.env.REACT_APP_API_URL}
+      // *
       const res = await axios.post(
-        `${process.env.REACT_APP_API_URL}/api/auth/register`,
+        "http://localhost:6005/api/auth/register",
         formData,
         {
           withCredentials: true,
@@ -66,7 +68,18 @@ const Register = () => {
   
     } catch (error) {
       // Error case
-      toast.error(error.response.data.message);
+      console.error("Request failed:", error);
+
+  // Log Axios-specific error details
+  if (error.response) {
+    console.error("Response data:", error.response.data);
+    console.error("Status code:", error.response.status);
+  } else if (error.request) {
+    console.error("No response received:", error.request);
+  } else {
+    console.error("Request setup error:", error.message);
+  }
+      toast.error( error.response?.data?.message || "An error occurred during registration");
     }
   };
 
@@ -159,7 +172,7 @@ const Register = () => {
             </Link>
           </div>
           <div style={{ justifyContent: "center", alignItems: "center" }}>
-            <button type="submit" className="text-2xl">Register</button>
+            <button type="submit" className="text-2xl bg-green-500 px-4 py-2 rounded hover:bg-green-400 border-4" >Register</button>
             <ToastContainer position="top-center"/>
           </div>
         </form>

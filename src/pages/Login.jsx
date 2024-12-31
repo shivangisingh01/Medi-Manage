@@ -3,7 +3,6 @@ import React, { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-// import { Context } from "../main";
 import { AuthContext } from "../AuthContext";
 import { Link } from "react-router-dom";
 
@@ -16,7 +15,7 @@ const Login = () => {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post(`${process.env.REACT_APP_API_URL}/api/auth/login`, { 
+      const response = await axios.post("http://localhost:6005/api/auth/login", { 
         email, 
         password 
       });

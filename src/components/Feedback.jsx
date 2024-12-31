@@ -81,7 +81,7 @@ const Feedback = () => {
             onChange={(e) => setMessage(e.target.value)}
           />
           <div className="text-xl justify-center">
-            <button type="submit" onClick={handleMessage}>Send</button>
+            <button type="submit" onClick={handleMessage} className="font-semibold text-base border-4 px-4 py-2 rounded hover:bg-green-400">Send</button>
           </div>
         </form>
         <img src="/Vector.png" alt="vector" />
