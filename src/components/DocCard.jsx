@@ -23,6 +23,7 @@ const DocCard = ({ docId, docName, docImage, dept, yrsOfExp, fees }) => {
   const { isAuthenticated } = useContext(AuthContext);
 
   const token = localStorage.getItem("jwtToken") || "";
+  // console.log(token);
   let userId = null;
   if(token) {
   const decodedToken = jwtDecode(token);

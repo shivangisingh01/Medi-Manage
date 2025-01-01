@@ -9,10 +9,7 @@ import Register from "./pages/Register";
 import Navbar from "./components/Navbar";
 import Login from "./pages/Login";
 import FinancialReport from "./pages/FinancialReport";
-import axios from "axios";
-// import 'bootstrap/dist/css/bootstrap.min.css';
 import "bootstrap/dist/css/bootstrap.min.css";
-// import { Context } from "./main";
 import "./App.css";
 
 const router = createBrowserRouter([
