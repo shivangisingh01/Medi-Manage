@@ -51,7 +51,8 @@ const DocCard = ({ docId, docName, docImage, dept, yrsOfExp, fees }) => {
   // Check if this is the user's first consultation with the doctor
   const checkFirstConsultation = async (userId, doctorId) => {
     try {
-      const response = await axios.get(`http://localhost:6005/api/consultation/user/${userId}/doctor/${doctorId}`, {
+      // `${process.env.REACT_APP_API_URL}/api/feed/back`
+      const response = await axios.get(`${process.env.REACT_APP_API_URL}/api/consultation/user/${userId}/doctor/${doctorId}`, {
         // params: { userId, doctorId },
       });
       console.log(response.data.isFirstConsultation); 
@@ -89,7 +90,7 @@ const DocCard = ({ docId, docName, docImage, dept, yrsOfExp, fees }) => {
       currency: "INR",
     });
 
-    axios.post("http://localhost:6005/orders", data, {
+    axios.post(`${process.env.REACT_APP_API_URL}/orders`, data, {
       headers: { 'Content-Type': 'application/json' },
     })
     .then((response) => {
@@ -142,14 +143,14 @@ const DocCard = ({ docId, docName, docImage, dept, yrsOfExp, fees }) => {
     const appointmentData = { userId, doctorId:selectedDoc , date: appointmentDate, timeSlot };
     
     try {
-      const response = await fetch("http://localhost:6005/api/appointments/book", {
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/api/appointments/book`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(appointmentData),
       });
 
       // if (response.ok) {
-        await axios.post(`http://localhost:6005/api/consultation/user/${userId}/doctor/${doctorId}`);
+        await axios.post(`${process.env.REACT_APP_API_URL}/api/consultation/user/${userId}/doctor/${doctorId}`);
         toast.success("Appointment booked successfully!");
         resetAppointmentForm();
       // } else {

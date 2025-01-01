@@ -51,8 +51,6 @@ const router = createBrowserRouter([
   },
 ]);
 function App() {
-
-//  http://localhost:6005/api/auth/fetch", {
      
   return (
     <>
