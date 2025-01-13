@@ -47,7 +47,7 @@ export const doctors = [
     {
       docId : 9504,
       docName: "Dr. Kavya Rao",
-      docImage: dermaDoc2,
+      docImage: heartDoc2,
       dept: "Dermatologist",
       yrsOfExp: 2,
       fees : 500

@@ -1,16 +1,16 @@
-MediManage
+
+# MediManage
 
 MediManage is a full-stack hospital management system designed to streamline hospital operations by providing an efficient way to manage patients, appointments, and staff. The system ensures secure access using JWT token authentication and is fully deployed for use.
 
-Features
+
+## Features
 
 1. Authentication and Authorization
 
-User login and registration.
-
-Role-based access control (Admin, Doctor, Patient).
-
-Secure JWT-based authentication for session management.
+  User login and registration.
+  Role-based access control (Admin, Doctor, Patient).
+  Secure JWT-based authentication for session management.
 
 2. Patient Management
 
@@ -39,40 +39,13 @@ Display of real-time data and charts for better insights.
 6. Payment Gateway Integration
 
 Secure online payments using Razorpay.
-
 Generate and track invoices for medical services.
 
-Technologies Used
 
-Frontend
+## Installation
 
-ReactJS: For building a responsive and user-friendly interface.
+Install medi-manage with npm
 
-Tailwind CSS: For styling the application.
-
-Backend
-
-Node.js: Server-side runtime for building RESTful APIs.
-
-Express.js: Framework for managing routes and middleware.
-
-Database
-
-MongoDB: NoSQL database for storing and managing data.
-
-Authentication
-
-JWT (JSON Web Tokens): For secure authentication and authorization.
-
-Payment Gateway
-
-Razorpay: For handling secure online payments.
-
-Deployment
-
-Render: Hosting the backend and ensuring 24/7 availability.
-
-Project Setup
 
 Prerequisites
 
@@ -86,15 +59,23 @@ Steps to Run Locally
 
 Clone the repository:
 
-git clone https://github.com/your-username/medi-manage.git
+git clone https://github.com/shivangisingh01/Medi-Manage.git
 
 Navigate to the project directory:
 
-cd medi-manage
+
+```bash
+  cd medi-manage
+  
+```
 
 Install dependencies:
 
 npm install
+```bash
+  npm install
+  
+```
 
 Configure environment variables:
 
@@ -110,19 +91,57 @@ RAZORPAY_KEY_SECRET=your_razorpay_key_secret
 
 Start the server:
 
-npm start
-
+```bash
+  npm start
+  
+```
 Open the frontend (if applicable) by navigating to http://localhost:3000.
+
+
+    
+## Tech Stack
+
+**Client:** React, Redux, TailwindCSS
+
+**Server:** Node, Express
+
+**Database:** MongoDB
+
+**Authentication:** JWT (JSON Web Tokens)
+
+**Payment Gateway:** Razorpay
+
+**Deployment:** Render
+## Deployment
+
+The backend is deployed on Render and can be accessed at:
+
+https://medi-manage-frontend.onrender.com
+
+
+## Screenshots
+
+![App Screenshot](https://res.cloudinary.com/difquq0tf/image/upload/v1736777533/Screenshot_208_fy6kyr.png)
+
+![App Screenshot](https://res.cloudinary.com/difquq0tf/image/upload/v1736777534/Screenshot_207_wk6dk4.png)
+
+
+## License
+
+
+
+This project is licensed under the [MIT](https://choosealicense.com/licenses/mit/) License.
+## API Endpoints
 
 API Endpoints
 
-Authentication
+**Authentication**
 
 POST /api/auth/register - Register a new user
 
 POST /api/auth/login - Login and receive a JWT token
 
-Patients
+**Patients**
 
 GET /api/patients - Get all patients
 
@@ -132,7 +151,7 @@ PUT /api/patients/:id - Update patient details
 
 DELETE /api/patients/:id - Delete a patient
 
-Appointments
+**Appointments**
 
 GET /api/appointments - Get all appointments
 
@@ -140,49 +159,20 @@ POST /api/appointments - Schedule a new appointment
 
 DELETE /api/appointments/:id - Cancel an appointment
 
-Payments
+**Payments**
 
 POST /api/payments - Initiate a payment
 
 GET /api/payments/:id - Get payment details
 
-Deployment
 
-The backend is deployed on Render and can be accessed at:
+## Future enhancements
 
-<Your Render Deployment URL> 
 
-Future Enhancements
+    1. Implement advanced analytics using charts and graphs.
 
-Implement advanced analytics using charts and graphs.
-
-Add email and SMS notifications for appointments and reminders.
-
-Mobile app version for Android and iOS.
-
-Contributing
-
-Contributions are welcome! Please follow these steps:
-
-Fork the repository.
-
-Create a new branch:
-
-git checkout -b feature-name
-
-Commit your changes:
-
-git commit -m "Description of changes"
-
-Push to the branch:
-
-git push origin feature-name
-
-Submit a pull request.
-
-License
-
-This project is licensed under the MIT License.
+    2. Add SMS notifications for appointment &  
+       reminders.
 
 Contact
 
