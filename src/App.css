@@ -13,6 +13,8 @@ body {
   background: #E7D2CC;
   max-width: 100%;
     overflow-x: hidden;
+    /* max-width: 500px; Limit the width of the parent container */
+    margin: auto; 
 }
 .btn {
   padding: 10px 20px;

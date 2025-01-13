@@ -36,7 +36,10 @@ const Navbar = () => {
   const { isAuthenticated, setIsAuthenticated } = useContext(AuthContext);
   const handleLogout = async () => {
     await axios
-      .get(`${process.env.REACT_APP_API_URL}/api/logout`, {
+      .get(
+        "http://localhost:6005/api/logout"
+        // `${process.env.REACT_APP_API_URL}/api/logout`
+        , {
         withCredentials: true,
       })
       .then((res) => {

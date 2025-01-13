@@ -7,7 +7,7 @@ import { AuthContext } from "../AuthContext";
 import { Link } from "react-router-dom";
 
 const Login = () => {
-  const {isAuthenticated, setIsAuthenticated, setUser } = useContext(AuthContext);
+  const {isAuthenticated, setIsAuthenticated, setUser} = useContext(AuthContext);
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -15,17 +15,23 @@ const Login = () => {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post( `${process.env.REACT_APP_API_URL}/api/auth/login`, { 
-        email, 
-        password 
-      });
-    
+     
+          const response = await axios.post(
+            // "http://localhost:6005/api/auth/login",
+            `${import.meta.env.VITE_API_BASE_URL}/api/auth/login`,
+            {
+              email,
+              password
+            },
+            { withCredentials: true }  // This ensures the HttpOnly cookie is sent with the request
+          );
+
           // Get the token from the backend response
           localStorage.setItem("jwtToken", response.data.token);
-
+      
           setIsAuthenticated(true);
           setUser(response.data.user);
-
+      
           toast.success("Login successful!");
           setTimeout(() => {
             navigate("/"); // Redirect after login
@@ -34,6 +40,7 @@ const Login = () => {
     } catch (error) {
       const errorMessage =
         error.response?.data?.message || "Login failed. Please try again.";
+
       toast.error(errorMessage); // Display error toast
     }
   };

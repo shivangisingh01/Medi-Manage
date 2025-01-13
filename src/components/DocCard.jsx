@@ -8,7 +8,8 @@ import { toast, ToastContainer } from "react-toastify";
 import { AuthContext } from "../AuthContext";
 import "react-toastify/dist/ReactToastify.css";
 import TimeSlotPicker from "../components/TimeSlotPicker";
-import { jwtDecode } from "jwt-decode";
+import {jwtDecode} from 'jwt-decode';
+
 
 const DocCard = ({ docId, docName, docImage, dept, yrsOfExp, fees }) => {
   const [show, setShow] = useState(false);
@@ -29,6 +30,7 @@ const DocCard = ({ docId, docName, docImage, dept, yrsOfExp, fees }) => {
   const decodedToken = jwtDecode(token);
   userId= decodedToken.userId;
 }
+  
   // Apply discount based on consultation rules
   const applyDiscount = async (amount, yearsOfExp) => {
     try {
@@ -52,9 +54,7 @@ const DocCard = ({ docId, docName, docImage, dept, yrsOfExp, fees }) => {
   const checkFirstConsultation = async (userId, doctorId) => {
     try {
       // `${process.env.REACT_APP_API_URL}/api/feed/back`
-      const response = await axios.get(`${process.env.REACT_APP_API_URL}/api/consultation/user/${userId}/doctor/${doctorId}`, {
-        // params: { userId, doctorId },
-      });
+      const response = await axios.get(`${import.meta.env.VITE_API_BASE_URL}/api/consultation/user/${userId}/doctor/${doctorId}`);
       console.log(response.data.isFirstConsultation); 
       return response.data.isFirstConsultation;
     } catch (error) {
@@ -90,7 +90,10 @@ const DocCard = ({ docId, docName, docImage, dept, yrsOfExp, fees }) => {
       currency: "INR",
     });
 
-    axios.post(`${process.env.REACT_APP_API_URL}/orders`, data, {
+    axios.post(
+      // "http://localhost:6005/orders"
+      `${import.meta.env.VITE_API_BASE_URL}/orders`
+      , data, {
       headers: { 'Content-Type': 'application/json' },
     })
     .then((response) => {
@@ -108,12 +111,13 @@ const DocCard = ({ docId, docName, docImage, dept, yrsOfExp, fees }) => {
     }
 
     const options = {
-      key: 'rzp_test_DSzFk0Dp7MK46c',
+      key: 'rzp_test_Agt1kwTTb8PHmN',
       amount: amount,
       currency: 'INR',
       name: "MediManage",
       description: "Payment to MediManage",
-      image: "https://papayacoders.com/demo.png",
+      // image: "/hospi.jpg",
+      image: "https://images.pexels.com/photos/757889/pexels-photo-757889.jpeg?auto=compress&cs=tinysrgb&w=600",
       handler: function (response) {
         makeAppointment();
         setResponseId(response.razorpay_payment_id);
@@ -123,6 +127,10 @@ const DocCard = ({ docId, docName, docImage, dept, yrsOfExp, fees }) => {
         email: "shivangisinghpal05@gmail.com",
       },
       theme: { color: "#F4C430" },
+      modal: {
+        width: '500px', // Razorpay does not accept width here, but the modal will respond to the viewport.
+        escape: true, // Allow closing the modal with the Escape key.
+      },
     };
 
     const paymentObject = new window.Razorpay(options);
@@ -140,17 +148,23 @@ const DocCard = ({ docId, docName, docImage, dept, yrsOfExp, fees }) => {
       return;
     }
      const  doctorId = selectedDoc;
-    const appointmentData = { userId, doctorId:selectedDoc , date: appointmentDate, timeSlot };
+     const appointmentData = { userId, doctorId:selectedDoc , date: appointmentDate, timeSlot };
     
     try {
-      const response = await fetch(`${process.env.REACT_APP_API_URL}/api/appointments/book`, {
+      const response = await fetch(
+        // "http://localhost:6005/api/appointments/book"
+        `${import.meta.env.VITE_API_BASE_URL}/api/appointments/book`
+        , {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(appointmentData),
       });
 
       // if (response.ok) {
-        await axios.post(`${process.env.REACT_APP_API_URL}/api/consultation/user/${userId}/doctor/${doctorId}`);
+        await axios.post(
+          // `http://localhost:6005/api/consultation/user/${user}/doctor/${doctorId}`
+          `${import.meta.env.VITE_API_BASE_URL}/api/consultation/user/${userId}/doctor/${doctorId}`
+        );
         toast.success("Appointment booked successfully!");
         resetAppointmentForm();
       // } else {

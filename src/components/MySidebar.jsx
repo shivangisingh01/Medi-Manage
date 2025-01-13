@@ -1,9 +1,4 @@
 import React from "react";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faHeart } from '@fortawesome/free-solid-svg-icons'
-import { faBrain } from '@fortawesome/free-solid-svg-icons'
-import { faXRay } from '@fortawesome/free-solid-svg-icons'
-import { faDisease } from '@fortawesome/free-solid-svg-icons'
 
 const MySidebar = ({ setDepartment }) => {
   return (
